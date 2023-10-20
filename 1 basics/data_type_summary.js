@@ -1,4 +1,4 @@
-//  Primitive
+//  Primitive          <--- they us stack memory  ,we get the copy of the value amd the changes are done in that copy
 //  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
 
 const score = 100
@@ -17,7 +17,7 @@ console.log(id === anotherId);   //symbols are used to give a specific id , as i
 
 
 
-// Reference (Non primitive)
+// Reference (Non primitive)      <---- these are stored in heap memory , we get the original value and the changes are done in original memory
 
 // Array, Objects, Functions          all the refernce data type have the type of functions accept for function its data type is object function
 
