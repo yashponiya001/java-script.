@@ -8,7 +8,7 @@ function sayMyName(){
     console.log("H");
 }
 
-// sayMyName()
+// sayMyName() in this pranthesis execute the function , if we dont add paranthesis with function name it will only give the reference to the function
 
 // function addTwoNumbers(number1, number2){
 
