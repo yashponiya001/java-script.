@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');// creatng an element named li 
+        li.innerHTML = `${langName}` // puting the language name
+        document.querySelector('.language').appendChild(li) //here we will select language class and append the child but this will create a problem for big functions cause it will traverse the whole tree
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    //Edit the value
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);  //it is not optimized so we use the approach below
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo" // we can use append child, inner html too there is no much difference
+    secondLang.replaceWith(newli)   //replace with the content (newli)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")// extract first child
+    firstLang.outerHTML = '<li>TypeScript</li>' //change the value here we can change the whole outer html
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')  //select last child
+    lastLang.remove() // remove last child
+
+
+</script>
+</html>
