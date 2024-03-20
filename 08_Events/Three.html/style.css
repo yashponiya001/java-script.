@@ -1,0 +1,21 @@
+
+body{
+    text-align: center;
+    background-color: rgb(26, 114, 169);
+}
+
+h1{
+    color: rgb(243, 250, 207);
+}
+button {
+    padding: 10px 20px; /* Add some padding to the buttons */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Add rounded corners */
+    margin: 10px; /* Add some space between buttons */
+    cursor: pointer; /* Indicate clickable behavior */
+    background-color: darkorange;
+}
+
+button:hover {
+    background-color: #bcf9f2; /* Change background color on hover */
+}
