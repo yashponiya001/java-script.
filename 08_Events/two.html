@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is our Orignal text</h1>
+    <button id="stop">Stop</button> // will create a stop button to use it further ahead
+</body>
+<script>
+    const sayYash = function(){
+        console.log("yash"); //created a funtion to print my name after a set time out of 2 second
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series" // this will change the text of h1 to the writen text 
+    }
+
+    const changeMe = setTimeout(changeText, 2000)// thsi will change the h1 text after a time of 2 seconds
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED") // in this we will stop the settimeout function before performing its task as it might not be needed for the suture use
+    })
+</script>
+</html>
