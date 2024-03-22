@@ -1,0 +1,32 @@
+//random user.me is a api i can use for practice
+//json formater can be used to read, format , validate  the api data 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary' // this will be the hardcode url that we will use
+    const xhr = new XMLHttpRequest(); //to interact with servers
+    xhr.open('GET', requestUrl) //till now open has not been called we have to use send() and we will send a request
+    xhr.onreadystatechange = function(){// to continuously monitor the state and changes
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) { // we will detect the state here in this particular case we will print when the state will reach to 4
+            const data = JSON.parse(this.responseText) // here we will use this to show the current context and we will convert the data in JSON wormat where parse will convert string into JSON and the type of json is object
+            console.log(typeof data);  // the data will be in string not in array most of the time the data will be in string format
+            console.log(data.followers);
+        }
+    }
+    xhr.send();
+</script>
+</html>
